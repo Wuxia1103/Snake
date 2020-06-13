@@ -16,5 +16,16 @@ namespace Snake
         {
             InitializeComponent();
         }
+
+        //开始游戏
+        private void btBegin_Click(object sender, EventArgs e)
+        {
+
+        }
+        //退出游戏
+        private void btExit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
