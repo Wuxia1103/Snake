@@ -73,23 +73,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 418);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btBegin);
-            this.Controls.Add(this.btExit);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btExit;
-        private System.Windows.Forms.Button btBegin;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
