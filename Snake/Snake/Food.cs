@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Snake
 {
-    class Food
+    class Food:Snake
     {
         //位置
         private Point _origin;
