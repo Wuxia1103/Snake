@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace Snake
 {
+
     public partial class Form1 : Form
     {
-       
+        string key = "start";//记录键盘状态
+        Label[] labels = new Label[3000];//贪吃蛇身体数组
+
         public Form1()
         {
             InitializeComponent();
@@ -40,9 +43,9 @@ namespace Snake
                 this.Controls.Add(label);
             }
             //控件Timer，每隔一段时间发生一次右移（start）
-            dt.Tick += new EventHandler(dt_Tick);
+            //dt.Tick += new EventHandler(dt_Tick);
             //键盘敲击事件
-            this.KeyDown += new KeyEventHandler(form_keyDown);
+            //this.KeyDown += new KeyEventHandler(form_keyDown);
             dt.Start();//timer开始计时
         }    
     }

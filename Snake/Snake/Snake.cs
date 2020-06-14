@@ -53,7 +53,7 @@ namespace Snake
             lb.Text = "▉";
             lb.Tag = i;
             labels[i] = lb;
-            this.Controls.Add(lb);
+            //this.Controls.Add(lb);
         }
         /// <summary>
         /// 键盘按键输入的响应
@@ -95,7 +95,7 @@ namespace Snake
                 Snake_move(m, n);
             }
             //每按一次，判断是否与食物重合
-            eat_time();
+           // eat_time();
         }
         /// <summary>
         /// 敲击键盘响应
@@ -129,7 +129,7 @@ namespace Snake
             {
                 labels[0].Top = n + 10;
             }
-            eat_time();
+            //eat_time();
         }
     }
 }
