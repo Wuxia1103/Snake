@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Snake
 {
-    class Snake
+    class Snake:Form1
     {
         string key = "start";//记录键盘状态
         Label[] labels = new Label[3000];//贪吃蛇身体数组
