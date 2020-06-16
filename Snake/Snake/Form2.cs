@@ -8,102 +8,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Snake
 {
-    class Food
-    {
-        //位置
-        private Point _origin;
-        private static int unit = 1;
-        //场地长
-        private int length = unit * 1000;
-        //场地宽
-        private int width = unit * 500;
-
-
-        public Point Origin
-        {
-            get { return _origin; }
-            set { _origin = value; }
-        }
-
-
-        //显示食物
-        public void Display(Graphics g)
-        {
-            SolidBrush brush = new SolidBrush(Color.Red);
-            g.FillRectangle(brush, _origin.X, _origin.Y, 1, 1);
-        }
-        //食物消失
-        public void UnDisplay(Graphics g)
-        {
-            SolidBrush brush = new SolidBrush(Color.White);  //背景色
-            g.FillRectangle(brush, _origin.X, _origin.Y, 1, 1);
-        }
-        //产生随机食物
-        public Food RandomFood()
-        {
-            Random random = new Random();
-            int x = random.Next(length / unit - 2) + 1;
-            int y = random.Next(width / unit - 2) + 1;
-            Point d = new Point();
-            Food f = new Food();
-            f.Origin = d;
-            return f;
-        }
-        //显示新食物
-        public void DisplayFood(Graphics g)
-        {
-            Food food = new Food();
-            food.UnDisplay(g);
-            food.RandomFood();
-            food.Display(g);
-        }
-    }
-    public partial class Form2 : Form,Food
+    public partial class Form2 : Form
     {
         string key = "start";//记录键盘状态
         Label[] labels = new Label[3000];//贪吃蛇身体数组
         Timer dt = new Timer();
-        Random R = new Random();//随机数,用于生成食物
+        static Random food = new Random();//随机数,用于生成食物
         int a = 0, b = 0;// 记录坐标
+
+
+
         public Form2()
         {
             InitializeComponent();
         }
+        
         private void Form2_Load(object sender, EventArgs e)
         {
-                this.Top = 120;
-                this.Left = 120;
-                this.Width = 1000;
-                this.Height = 500;
-                this.BackColor = Color.White;
-                //贪吃蛇设置
-                for (int i = 0; i < 5; i++)
-                {
-                    Label label = new Label();
-                    label.Width = label.Height = 10;
-                    label.Top = 400;
-                    label.Left = 400;
-                    label.BackColor = Color.Black;
-                    //获取或设置包含有关控件的数据的对象。
-                    label.Tag = i;
-                    labels[i] = label;
-                    this.Controls.Add(label);
-                }
-                //控件timer,每隔一段时间发生一次右移
-                dt.Tick += new EventHandler(dt_Tick);
-                //键盘敲击事件
-                this.KeyDown += new KeyEventHandler(form_keyDown);
-                dt.Start();//timer开始计时
+            this.Top = 120;
+            this.Left = 120;
+            this.Width = 1000;
+            this.Height = 500;
+            this.BackColor = Color.White;
+            //贪吃蛇设置
+            for (int i = 0; i < 5; i++)
+            {
+                Label label = new Label();
+                label.Width = label.Height = 10;
+                label.Top = 400;
+                label.Left = 400;
+                label.BackColor = Color.Black;
+                //获取或设置包含有关控件的数据的对象。
+                label.Tag = i;
+                labels[i] = label;
+                this.Controls.Add(label);
+            }
+            //控件timer,每隔一段时间发生一次右移
+            dt.Tick += new EventHandler(dt_Tick);
+            //键盘敲击事件
+            this.KeyDown += new KeyEventHandler(form_keyDown);
+            dt.Start();//timer开始计时
+            display();
         }
         //蛇移动
         void Snake_move(int m, int n)
         {
             int x = 0, y = 0;
-            Food food = new Food();
-            food.RandomFood();
-            food.Display(g);
             for (int i = 1; labels[i] != null; i++)
             {
                 if (i >= 3)
@@ -216,22 +169,36 @@ namespace Snake
             labels[i] = lb;
             this.Controls.Add(lb);
         }
-        /// <summary>
-        /// 创建食物
-        /// </summary>
-        /// <param name="g"></param>
-        public void display(Graphics g)
+        // 利用随机函数生成食物
+        private void display()
         {
             int x, y;//表示食物点的坐标
-            x = R.Next(38);
-            y = R.Next(36);
+            x = food.Next(33);
+            y = food.Next(44);
             Label lb = new Label();
             lb.BackColor = Color.Red;
             lb.AutoSize = false;
             lb.Size = new Size(10, 10);
+            lb.Text = "hhhh";
             lb.Location = new Point(x * 10, y * 10);
             this.Controls.Add(lb);
         }
+        //判断是否吃到食物以及吃到食物后的反应
+        private void EatFood()
+        {
+            foreach(Label lb1 in this.Controls)
+            {
+                if(lb1.BackColor == Color.Red)
+                {
+                    if(lb1.Location == labels[0].Location)
+                    {
+                        this.Controls.Remove(lb1);
+                        display();
+                    }
+                }
+            }
+        }
+
         
     }
 }
