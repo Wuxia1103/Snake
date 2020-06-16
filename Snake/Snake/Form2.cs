@@ -10,7 +10,57 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form2 : Form
+    class Food
+    {
+        //位置
+        private Point _origin;
+        private static int unit = 1;
+        //场地长
+        private int length = unit * 1000;
+        //场地宽
+        private int width = unit * 500;
+
+
+        public Point Origin
+        {
+            get { return _origin; }
+            set { _origin = value; }
+        }
+
+
+        //显示食物
+        public void Display(Graphics g)
+        {
+            SolidBrush brush = new SolidBrush(Color.Red);
+            g.FillRectangle(brush, _origin.X, _origin.Y, 1, 1);
+        }
+        //食物消失
+        public void UnDisplay(Graphics g)
+        {
+            SolidBrush brush = new SolidBrush(Color.White);  //背景色
+            g.FillRectangle(brush, _origin.X, _origin.Y, 1, 1);
+        }
+        //产生随机食物
+        public Food RandomFood()
+        {
+            Random random = new Random();
+            int x = random.Next(length / unit - 2) + 1;
+            int y = random.Next(width / unit - 2) + 1;
+            Point d = new Point();
+            Food f = new Food();
+            f.Origin = d;
+            return f;
+        }
+        //显示新食物
+        public void DisplayFood(Graphics g)
+        {
+            Food food = new Food();
+            food.UnDisplay(g);
+            food.RandomFood();
+            food.Display(g);
+        }
+    }
+    public partial class Form2 : Form,Food
     {
         string key = "start";//记录键盘状态
         Label[] labels = new Label[3000];//贪吃蛇身体数组
@@ -51,6 +101,9 @@ namespace Snake
         void Snake_move(int m, int n)
         {
             int x = 0, y = 0;
+            Food food = new Food();
+            food.RandomFood();
+            food.Display(g);
             for (int i = 1; labels[i] != null; i++)
             {
                 if (i >= 3)
