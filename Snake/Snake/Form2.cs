@@ -23,13 +23,11 @@ namespace Snake
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            void snake()
-            {
                 this.Top = 120;
                 this.Left = 120;
                 this.Width = 1000;
                 this.Height = 500;
-                this.BackColor = Color.Red;
+                this.BackColor = Color.White;
                 //贪吃蛇设置
                 for (int i = 0; i < 5; i++)
                 {
@@ -48,7 +46,6 @@ namespace Snake
                 //键盘敲击事件
                 this.KeyDown += new KeyEventHandler(form_keyDown);
                 dt.Start();//timer开始计时
-            }
         }
         //蛇移动
         void Snake_move(int m, int n)
@@ -162,10 +159,26 @@ namespace Snake
             lb.Top = b;
             lb.Left = a;
             lb.BackColor = Color.Black;
-            lb.Text = "▉";
             lb.Tag = i;
             labels[i] = lb;
             this.Controls.Add(lb);
         }
+        /// <summary>
+        /// 创建食物
+        /// </summary>
+        /// <param name="g"></param>
+        public void display(Graphics g)
+        {
+            int x, y;//表示食物点的坐标
+            x = R.Next(38);
+            y = R.Next(36);
+            Label lb = new Label();
+            lb.BackColor = Color.Red;
+            lb.AutoSize = false;
+            lb.Size = new Size(10, 10);
+            lb.Location = new Point(x * 10, y * 10);
+            this.Controls.Add(lb);
+        }
+        
     }
 }
