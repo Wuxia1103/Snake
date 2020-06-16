@@ -22,9 +22,9 @@ namespace Snake
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Top = 120;
-            this.Left = 120;
+            this.Left = 120;    
             this.Width = 1000;
-            this.Height = 1000;
+            this.Height = 500;
             this.BackColor = Color.White;
 
         }
