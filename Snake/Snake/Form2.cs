@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -14,10 +8,11 @@ namespace Snake
     public partial class Form2 : Form
     {
         string key = "start";//记录键盘状态
-        Label[] labels = new Label[3000];//贪吃蛇身体数组
+        static Label[] labels = new Label[3000];//贪吃蛇身体数组
         Timer dt = new Timer();
         static Random food = new Random();//随机数,用于生成食物
         int a = 0, b = 0;// 记录坐标
+        private int speed;//速度
 
 
 
@@ -25,7 +20,7 @@ namespace Snake
         {
             InitializeComponent();
         }
-        
+
         private void Form2_Load(object sender, EventArgs e)
         {
             this.Top = 120;
@@ -52,6 +47,7 @@ namespace Snake
             this.KeyDown += new KeyEventHandler(form_keyDown);
             dt.Start();//timer开始计时
             display();
+            //EatFood();
         }
         //蛇移动
         void Snake_move(int m, int n)
@@ -170,11 +166,11 @@ namespace Snake
             this.Controls.Add(lb);
         }
         // 利用随机函数生成食物
-        private void display()
+         void display()
         {
             int x, y;//表示食物点的坐标
-            x = food.Next(33);
-            y = food.Next(44);
+            x = food.Next(55);
+            y = food.Next(66);
             Label lb = new Label();
             lb.BackColor = Color.Red;
             lb.AutoSize = false;
@@ -184,13 +180,13 @@ namespace Snake
             this.Controls.Add(lb);
         }
         //判断是否吃到食物以及吃到食物后的反应
-        private void EatFood()
+        void EatFood()
         {
-            foreach(Label lb1 in this.Controls)
+            foreach (Label lb1 in this.Controls)
             {
-                if(lb1.BackColor == Color.Red)
+                if (lb1.BackColor == Color.Red)
                 {
-                    if(lb1.Location == labels[0].Location)
+                    if (lb1.Location == labels[0].Location)
                     {
                         this.Controls.Remove(lb1);
                         display();
@@ -198,7 +194,25 @@ namespace Snake
                 }
             }
         }
+        //设定速度
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 1: speed = 500; break;
+                case 2: speed = 450; break;
+                case 3: speed = 400; break;
+                case 4: speed = 350; break;
+                case 5: speed = 300; break;
+                case 6: speed = 250; break;
+                case 7: speed = 200; break;
+                case 8: speed = 150; break;
+                case 9: speed = 100; break;
+            }
+            this.timer1.Interval = speed;
+        }
 
         
+
     }
 }
