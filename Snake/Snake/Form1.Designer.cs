@@ -38,9 +38,10 @@
             // btExit
             // 
             this.btExit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btExit.Location = new System.Drawing.Point(717, 444);
+            this.btExit.Location = new System.Drawing.Point(637, 370);
+            this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(125, 46);
+            this.btExit.Size = new System.Drawing.Size(111, 38);
             this.btExit.TabIndex = 0;
             this.btExit.Text = "退出游戏";
             this.btExit.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // btBegin
             // 
             this.btBegin.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btBegin.Location = new System.Drawing.Point(146, 444);
+            this.btBegin.Location = new System.Drawing.Point(130, 370);
+            this.btBegin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btBegin.Name = "btBegin";
-            this.btBegin.Size = new System.Drawing.Size(125, 46);
+            this.btBegin.Size = new System.Drawing.Size(111, 38);
             this.btBegin.TabIndex = 1;
             this.btBegin.Text = "开始游戏";
             this.btBegin.UseVisualStyleBackColor = true;
@@ -60,20 +62,22 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(53, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(959, 417);
+            this.pictureBox1.Size = new System.Drawing.Size(642, 347);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 502);
+            this.ClientSize = new System.Drawing.Size(939, 418);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btBegin);
             this.Controls.Add(this.btExit);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
