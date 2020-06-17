@@ -46,6 +46,7 @@ namespace Snake
                 //键盘敲击事件
                 this.KeyDown += new KeyEventHandler(form_keyDown);
                 dt.Start();//timer开始计时
+            display();
         }
         //蛇移动
         void Snake_move(int m, int n)
@@ -106,7 +107,7 @@ namespace Snake
             {
                 labels[0].Top = n + 10;
             }
-            //eat_time();
+            eat_food();
         }
         /// <summary>
         /// 键盘按键输入的响应
@@ -148,26 +149,26 @@ namespace Snake
                 Snake_move(m, n);
             }
             //每按一次，判断是否与食物重合
-            // eat_time();
+            eat_food();
         }
         //吃过食物，蛇的身体变长
         void Snake_eat()
         {
-            int i = 0;
-            for (; labels[i] != null; i++) ;
+            int m, n;
+            m = labels[0].Left;
+            n = labels[0].Top;
             Label lb = new Label();
-            lb.Top = b;
-            lb.Left = a;
             lb.BackColor = Color.Black;
-            lb.Tag = i;
-            labels[i] = lb;
+            lb.AutoSize = false;
+            lb.Size = new Size(10, 10);
+            lb.Location = labels[0].Location;
+            Snake_move(m, n);
             this.Controls.Add(lb);
         }
         /// <summary>
         /// 创建食物
         /// </summary>
-        /// <param name="g"></param>
-        public void display(Graphics g)
+        public void display()
         {
             int x, y;//表示食物点的坐标
             x = R.Next(38);
@@ -176,8 +177,24 @@ namespace Snake
             lb.BackColor = Color.Red;
             lb.AutoSize = false;
             lb.Size = new Size(10, 10);
+            lb.Text = "";
             lb.Location = new Point(x * 10, y * 10);
             this.Controls.Add(lb);
+        }
+        public void eat_food()
+        {
+            foreach (Label lb in this.Controls)
+            {
+                if (lb.BackColor == Color.Red)
+                {
+                    if (lb.Location == labels[0].Location)
+                    {
+                        this.Controls.Remove(lb);
+                        display();
+                        Snake_eat();
+                    }
+                }
+            }
         }
         
     }
