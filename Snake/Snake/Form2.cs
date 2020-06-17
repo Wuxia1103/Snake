@@ -43,18 +43,18 @@ namespace Snake
                 i++;
             }
             display();
+            timer1.Start();
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
         /// <summary>
-        /// 时间
+        /// 时间，定时器
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
             Snake_move();
             eat_food();
-            timer1.Enabled = true;
         }
         /// <summary>
         /// 键盘响应事件
@@ -124,7 +124,7 @@ namespace Snake
             lb.BackColor = Color.Black;
             lb.AutoSize = false;
             lb.Size = new Size(10, 10);
-            lb.Location =labels[snakelen-1].Location;
+            lb.Location =labels[snakelen-2].Location;
             this.Controls.Add(lb);
             labels.Add(lb);
             snakelen++;
@@ -164,6 +164,7 @@ namespace Snake
                 }
             }
         }
+
        
     }
 }
