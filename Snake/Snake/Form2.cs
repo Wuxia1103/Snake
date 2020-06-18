@@ -18,7 +18,7 @@ namespace Snake
         List<Label> labels = new List<Label>();//贪吃蛇身体数组
         //Timer dt = new Timer();
         Random food = new Random();//随机数,用于生成食物
-        int snakelen = 5;
+        int snakelen = 5;//蛇的初始长度
 
         public Form2()
         {
@@ -49,7 +49,7 @@ namespace Snake
                 i++;
             }
             //控件timer,每隔一段时间发生一次右移
-            //dt.Tick += new EventHandler(dt_Tick);
+            timer1.Tick += new EventHandler(timer1_Tick);
             display();
             timer1.Start();
             //键盘敲击事件
