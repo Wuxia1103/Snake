@@ -19,6 +19,9 @@ namespace Snake
         int snakelen = 5;//蛇的初始长度；
         //得分
         int score = 0;
+        int second;//存放时间
+        int First = 0, Last = 0;
+        List<int> la = new List<int>();//保存数据
         public Form6()
         {
             InitializeComponent();
@@ -26,6 +29,7 @@ namespace Snake
             //控件timer,每隔一段时间发生一次右移
             timer1.Tick += new EventHandler(Timer1_Tick);
             timer1.Start();
+            timer2.Start();
             //键盘敲击事件
             this.KeyDown += new KeyEventHandler(Form6_keyDown);
         }
@@ -47,6 +51,32 @@ namespace Snake
             }
             display();
         }
+        //倒计时
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            second = int.Parse(label5.Text);
+            second--;
+            this.label5.Text = second.ToString();
+            if (second == 0)
+            {
+                this.label5.Enabled = false;
+                this.label5.Enabled = true;
+                timer2.Stop();
+                timer1.Stop();
+                MessageBox.Show("Game over!");
+                //更新新纪录，还有问题
+                //First = score;
+                //la.Add(First);
+                //int s = la[0];
+                //label6.Text = s.ToString();
+                //if (Last>First)
+                //{
+                //    Last = score;
+                //    label6.Text = Last.ToString();
+                //    First = Last;
+                //}  
+            }
+        }
         //定时器
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -67,7 +97,6 @@ namespace Snake
                 case "A": key = "A"; break;//左
                 case "S": key = "S"; break;//下
                 case "D": key = "D"; break;//右
-                //case "1": key = "1"; break;
                 default: break;
             }
         }
@@ -76,11 +105,6 @@ namespace Snake
         {
             switch (key)
             {
-                //case "1":
-                //    {
-                //        timer1.Interval = 1000;
-                //    }
-                //    break;
                 case "D":
                     for (int i = snakelen - 1; i > 0;)
                     {
@@ -123,7 +147,7 @@ namespace Snake
          void display()
         {
             int x, y;//表示食物点的坐标
-            x = food.Next(50);
+            x = food.Next(20);
             y = food.Next(30);
             Label lb = new Label();
             lb.BackColor = Color.Red;
@@ -149,8 +173,10 @@ namespace Snake
                 }
             }
         }
+
+
         //小蛇吃食物长身体
-         void Snake_eat()
+        void Snake_eat()
         {
             Label lb = new Label();
             lb.BackColor = Color.Black;
@@ -163,7 +189,5 @@ namespace Snake
             labels.Add(lb);
             snakelen++; 
         }
-
-
     }
 }

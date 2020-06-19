@@ -37,8 +37,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 70;
             // 
             // pictureBox1
             // 
@@ -90,9 +95,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(650, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 15);
+            this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 8;
-            this.label5.Text = "3:00";
+            this.label5.Text = "180";
             // 
             // label6
             // 
@@ -102,6 +107,11 @@
             this.label6.Size = new System.Drawing.Size(15, 15);
             this.label6.TabIndex = 9;
             this.label6.Text = "0";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form6
             // 
@@ -133,5 +143,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer2;
     }
 }
