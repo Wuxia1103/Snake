@@ -16,21 +16,25 @@ namespace Snake
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form6());
+            //Application.Run(new Form6());
             Form1 form1 = new Form1();
             Form3 form3 = new Form3();
-            Form2 form2 = new Form2();
-            Form4 form4 = new Form4();
-            //if (form1.ShowDialog() == DialogResult.OK)
+            //Form2 form2 = new Form2();
+            //Application.Run(new Form1());
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Form1());
+            }
+            //if (form3.ShowDialog() == DialogResult.OK && form1.ShowDialog() == DialogResult.OK)
             //{
             //    Application.Run(new Form2());
             //}
-            //if (form3.ShowDialog() == DialogResult.OK)
+            //if (form3.ShowDialog() == DialogResult.Yes)
             //{
             //    Application.Run(new Form1());
-
             //}
-            
+
+
         }
     }
 }
