@@ -123,7 +123,7 @@ namespace Snake
          void display()
         {
             int x, y;//表示食物点的坐标
-            x = food.Next(40);
+            x = food.Next(50);
             y = food.Next(30);
             Label lb = new Label();
             lb.BackColor = Color.Red;
@@ -158,9 +158,10 @@ namespace Snake
             lb.Size = new Size(10, 10);
             lb.Location = labels[snakelen - 2].Location;
             pictureBox1.Controls.Add(lb);
+            score = score + 1;
+            label4.Text = score.ToString();
             labels.Add(lb);
-            snakelen++;
-            //score = score + 1;
+            snakelen++; 
         }
 
 
