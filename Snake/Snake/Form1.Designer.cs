@@ -40,7 +40,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(836, 77);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(115, 38);
             this.button1.TabIndex = 1;
             this.button1.Text = "开始游戏";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(836, 351);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(115, 39);
             this.button2.TabIndex = 2;
             this.button2.Text = "结束游戏";
             this.button2.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(246, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(106, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(381, 441);
+            this.pictureBox1.Size = new System.Drawing.Size(521, 441);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -72,7 +72,7 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(678, 461);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 15);
+            this.label1.Size = new System.Drawing.Size(386, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "提示：目前速度为100毫秒，按1可调节为70毫秒";
             // 
