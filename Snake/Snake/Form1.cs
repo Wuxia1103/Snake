@@ -24,7 +24,7 @@ namespace Snake
             this.Top = 120;
             this.Left = 120;    
             this.Width = 1000;
-            this.Height = 500;
+            this.Height = 550;
             this.BackColor = Color.White;
 
         }
@@ -32,11 +32,14 @@ namespace Snake
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
     }
 }

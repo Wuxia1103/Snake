@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form2
+    partial class Form5
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,23 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Interval = 60;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // Form2
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "Form5";
+            this.Text = "Form5";
+            this.Load += new System.EventHandler(this.Form5_Load_1);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

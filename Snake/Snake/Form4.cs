@@ -10,31 +10,32 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
             this.Top = 120;
             this.Left = 120;
-            this.Width = 600;
+            this.Width = 800;
             this.Height = 550;
             this.BackColor = Color.White;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
     }
 }
