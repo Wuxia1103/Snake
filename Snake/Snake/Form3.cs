@@ -35,7 +35,13 @@ namespace Snake
         {
             //Form1 form1 = new Form1();
             //form1.Show();
-            //this.DialogResult = DialogResult.Yes;
+            this.DialogResult = DialogResult.Yes;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Form1 form1 = new Form1();
+            //form1.Show();
+            this.DialogResult = DialogResult.No;
         }
     }
 }

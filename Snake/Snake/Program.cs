@@ -19,21 +19,23 @@ namespace Snake
             //Application.Run(new Form6());
             Form1 form1 = new Form1();
             Form3 form3 = new Form3();
-            //Form2 form2 = new Form2();
+            Form2 form2 = new Form2();
             //Application.Run(new Form1());
+            //简单模式
             if (form3.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Form1());
             }
-            //if (form3.ShowDialog() == DialogResult.OK && form1.ShowDialog() == DialogResult.OK)
+            //if (form1.ShowDialog() == DialogResult.OK)
             //{
-            //    Application.Run(new Form2());
+                //Application.Run(new Form2());
             //}
-            //if (form3.ShowDialog() == DialogResult.Yes)
-            //{
-            //    Application.Run(new Form1());
-            //}
-
+            //高级模式
+            if (form3.ShowDialog() == DialogResult.Yes)
+            {
+                Application.Run(new Form1());
+            }
+            
 
         }
     }

@@ -29,7 +29,6 @@ namespace Snake
 
         }
 
-        Form1 form1 = new Form1();
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
