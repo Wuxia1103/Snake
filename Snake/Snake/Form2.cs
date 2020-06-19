@@ -14,11 +14,10 @@ namespace Snake
 {
     public partial class Form2 : Form
     {
-        string key = "start";//记录键盘状态
-        Label[] labels = new Label[3000];//贪吃蛇身体数组
-        Timer dt = new Timer();
-        Random R = new Random();//随机数,用于生成食物
-        int a = 0, b = 0;// 记录坐标
+        string key = "D";//记录键盘状态
+        List<Label> labels = new List<Label>();//贪吃蛇身体数组
+        Random R = new Random();//随机数,用于生成食物坐标
+        int snakelen = 5;
         public Form2()
         {
             InitializeComponent();
