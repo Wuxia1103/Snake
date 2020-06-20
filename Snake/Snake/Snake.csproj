@@ -52,6 +52,12 @@
     <Compile Include="BeginChallenge.Designer.cs">
       <DependentUpon>BeginChallenge.cs</DependentUpon>
     </Compile>
+    <Compile Include="BejinSmart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BejinSmart.Designer.cs">
+      <DependentUpon>BejinSmart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Food.cs" />
     <Compile Include="BejinEasy.cs">
       <SubType>Form</SubType>
@@ -71,11 +77,11 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Smart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Smart.Designer.cs">
+      <DependentUpon>Smart.cs</DependentUpon>
     </Compile>
     <Compile Include="Challenge.cs">
       <SubType>Form</SubType>
@@ -92,14 +98,17 @@
     <EmbeddedResource Include="BejinEasy.resx">
       <DependentUpon>BejinEasy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BejinSmart.resx">
+      <DependentUpon>BejinSmart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Easy.resx">
       <DependentUpon>Easy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="Smart.resx">
+      <DependentUpon>Smart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Challenge.resx">
       <DependentUpon>Challenge.cs</DependentUpon>

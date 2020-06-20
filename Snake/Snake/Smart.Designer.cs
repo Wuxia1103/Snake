@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form5
+    partial class Smart
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,14 @@
             this.timer1.Interval = 60;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // Form5
+            // BejinComplex
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form5";
-            this.Text = "Form5";
+            this.ClientSize = new System.Drawing.Size(998, 540);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "BejinComplex";
+            this.Text = "Smart";
             this.Load += new System.EventHandler(this.Form5_Load_1);
             this.ResumeLayout(false);
 

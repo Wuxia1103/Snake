@@ -16,10 +16,11 @@ namespace Snake
         {
             InitializeComponent();
         }
-
+        //简单模式
         private void button1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            BejinEasy beea = new BejinEasy();
+            beea.ShowDialog();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -30,17 +31,22 @@ namespace Snake
             this.Height = 550;
             this.BackColor = Color.White;
         }
-
+        //高级模式
         private void button2_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            form5.ShowDialog();
+            BejinSmart besmart = new BejinSmart();
+            besmart.ShowDialog();
         }
-
+        //挑战模式
         private void button3_Click(object sender, EventArgs e)
         {
             BeginChallenge becha = new BeginChallenge();
             becha.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

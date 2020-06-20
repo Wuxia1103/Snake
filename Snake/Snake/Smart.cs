@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form5 : Form
+    public partial class Smart : Form
     {
         string key = "D";//记录键盘状态
         List<Label> labels = new List<Label>();//贪吃蛇身体数组
@@ -18,7 +18,7 @@ namespace Snake
         Random food = new Random();//随机数,用于生成食物
         int snakelen = 5;//蛇的初始长度
 
-        public Form5()
+        public Smart()
         {
             InitializeComponent();
         }
