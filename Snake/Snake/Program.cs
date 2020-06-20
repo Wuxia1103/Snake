@@ -27,7 +27,7 @@ namespace Snake
             //简单模式
             if (form3.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1());
+                Application.Run(new BejinEasy());
             }
             //if (form1.ShowDialog() == DialogResult.OK)
             //{
@@ -36,16 +36,11 @@ namespace Snake
             //高级模式
             if (form3.ShowDialog() == DialogResult.Yes)
             {
-                Application.Run(new Form1());
+                Application.Run(new BejinEasy());
             }
-            //if (form1.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new Form2());
-                //form2.Show();
-                //form1.Close();
-            //}
 
 
+            
 
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form6
+    partial class Challenge
     {
         /// <summary>
         /// Required designer variable.

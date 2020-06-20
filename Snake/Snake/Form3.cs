@@ -33,15 +33,14 @@ namespace Snake
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Form1 form1 = new Form1();
-            //form1.Show();
-            this.DialogResult = DialogResult.Yes;
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6();
-            form6.Show();
+            BeginChallenge becha = new BeginChallenge();
+            becha.ShowDialog();
         }
     }
 }

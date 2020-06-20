@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form6 : Form
+    public partial class Challenge : Form
     {
         string key = "D";//记录键盘状态
         List<Label> labels = new List<Label>();//贪吃蛇身体数组
@@ -22,7 +22,7 @@ namespace Snake
         int second;//存放时间
         int First = 0, Last = 0;
         List<int> la = new List<int>();//保存数据
-        public Form6()
+        public Challenge()
         {
             InitializeComponent();
             
@@ -65,16 +65,20 @@ namespace Snake
                 timer1.Stop();
                 MessageBox.Show("Game over!");
                 //更新新纪录，还有问题
-                //First = score;
-                //la.Add(First);
-                //int s = la[0];
-                //label6.Text = s.ToString();
-                //if (Last>First)
+                First = score;
+                la.Add(First);
+                int s = la[0];
+                label6.Text = s.ToString();
+                if (Last > First)
+                {
+                    Last = score;
+                    label6.Text = Last.ToString();
+                    First = Last;
+                }
+                //else
                 //{
-                //    Last = score;
-                //    label6.Text = Last.ToString();
-                //    First = Last;
-                //}  
+                //    score = First;
+                //}
             }
         }
         //定时器

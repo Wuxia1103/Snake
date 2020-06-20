@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form2
+    partial class Easy
     {
         /// <summary>
         /// Required designer variable.

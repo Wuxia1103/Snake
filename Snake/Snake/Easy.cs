@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form2 : Form
+    public partial class Easy : Form
     {
         string key = "D";//记录键盘状态
         List<Label> labels = new List<Label>();//贪吃蛇身体数组
@@ -24,7 +24,7 @@ namespace Snake
         //Food f = new Food();
 
 
-        public Form2()
+        public Easy()
         {
             InitializeComponent();
         }
