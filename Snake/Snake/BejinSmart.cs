@@ -10,21 +10,18 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-
-    public partial class BejinEasy : Form
+    public partial class BejinSmart : Form
     {
-        public BejinEasy()
+        public BejinSmart()
         {
             InitializeComponent();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.DialogResult = DialogResult.OK;
-            Easy form2 = new Easy();
+            Smart smart = new Smart();
             this.Hide();
-            form2.ShowDialog();
+            smart.ShowDialog();
             this.Dispose();
         }
 
