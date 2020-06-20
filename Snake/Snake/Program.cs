@@ -20,7 +20,7 @@ namespace Snake
             Form1 form1 = new Form1();
             Form3 form3 = new Form3();
             Form2 form2 = new Form2();
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
             //简单模式
             if (form3.ShowDialog() == DialogResult.OK)
             {
