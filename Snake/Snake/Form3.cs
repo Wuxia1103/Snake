@@ -37,11 +37,11 @@ namespace Snake
             //form1.Show();
             this.DialogResult = DialogResult.Yes;
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
             Form6 form6 = new Form6();
-            form6.ShowDialog();
-            //this.DialogResult = DialogResult.No;
+            form6.Show();
         }
     }
 }
