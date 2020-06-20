@@ -39,9 +39,9 @@ namespace Snake
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            //Form1 form1 = new Form1();
-            //form1.Show();
-            this.DialogResult = DialogResult.No;
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
+            //this.DialogResult = DialogResult.No;
         }
     }
 }

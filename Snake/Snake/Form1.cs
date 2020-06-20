@@ -33,7 +33,7 @@ namespace Snake
         {
             //this.DialogResult = DialogResult.OK;
             Form2 form2 = new Form2();
-            this.Hide();
+            //this.Hide();
             form2.ShowDialog();
             //this.Dispose();
         }
