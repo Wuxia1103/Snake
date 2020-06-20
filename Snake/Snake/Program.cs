@@ -19,25 +19,17 @@ namespace Snake
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form2());
-            //Form1 form1 = new Form1();
-            Form3 form3 = new Form3();
-            //Form2 form2 = new Form2();
-            //Application.Run(new Form1());
+            Application.Run(new Form3());
             //简单模式
-            if (form3.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new BejinEasy());
-            }
-            //if (form1.ShowDialog() == DialogResult.OK)
+            //if (form3.ShowDialog() == DialogResult.OK)
             //{
-            //Application.Run(new Form2());
+            //    Application.Run(new BejinEasy());
             //}
             //高级模式
-            if (form3.ShowDialog() == DialogResult.Yes)
-            {
-                Application.Run(new BejinEasy());
-            }
+            //if (form3.ShowDialog() == DialogResult.Yes)
+            //{
+            //    Application.Run(new BejinEasy());
+            //}
 
 
             

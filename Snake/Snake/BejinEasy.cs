@@ -33,17 +33,17 @@ namespace Snake
         {
             //this.DialogResult = DialogResult.OK;
             Easy form2 = new Easy();
-            //this.Hide();
+            this.Hide();
             form2.ShowDialog();
-            //this.Dispose();
+            this.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
-            //this.Hide();
+            this.Hide();
             form3.ShowDialog();
-            //this.Dispose();
+            this.Dispose();
         }
     }
 }

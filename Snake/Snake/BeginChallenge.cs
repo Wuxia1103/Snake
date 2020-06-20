@@ -20,17 +20,17 @@ namespace Snake
         private void button1_Click(object sender, EventArgs e)
         {
             Challenge cha = new Challenge();
+            this.Hide();
             cha.ShowDialog();
+            this.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
-            //this.Hide();
+            this.Hide();
             form3.ShowDialog();
-            //this.Dispose();
-        }
-
-       
+            this.Dispose();
+        } 
     }
 }

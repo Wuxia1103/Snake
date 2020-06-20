@@ -73,22 +73,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("华文楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label1.Location = new System.Drawing.Point(904, 88);
+            this.label1.Location = new System.Drawing.Point(919, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 34);
+            this.label1.Size = new System.Drawing.Size(263, 34);
             this.label1.TabIndex = 3;
-            this.label1.Text = "挑战模式来临！";
+            this.label1.Text = "挑战模式来临！！";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("华文楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label2.Location = new System.Drawing.Point(919, 165);
+            this.label2.Location = new System.Drawing.Point(936, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 34);
+            this.label2.Size = new System.Drawing.Size(232, 34);
             this.label2.TabIndex = 4;
-            this.label2.Text = "准备好了嘛？";
+            this.label2.Text = "你准备好了嘛？";
             // 
             // BeginChallenge
             // 
@@ -102,7 +102,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "BeginChallenge";
             this.Text = "BeginChallenge";
-            this.Load += new System.EventHandler(this.BeginChallenge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
