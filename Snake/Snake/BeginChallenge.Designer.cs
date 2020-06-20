@@ -102,7 +102,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "BeginChallenge";
             this.Text = "BeginChallenge";
-            this.Load += new System.EventHandler(this.BeginChallenge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
