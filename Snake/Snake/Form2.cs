@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 
 
+
+
 namespace Snake
 {
     public partial class Form2 : Form
@@ -19,6 +21,9 @@ namespace Snake
         //Timer dt = new Timer();
         Random food = new Random();//随机数,用于生成食物
         int snakelen = 5;//蛇的初始长度
+        //Food f = new Food();
+
+
         public Form2()
         {
             InitializeComponent();
@@ -61,6 +66,7 @@ namespace Snake
             Snake_move();
             EatFood();
         }
+
         //蛇移动
         void Snake_move()
         {
@@ -127,7 +133,7 @@ namespace Snake
                 default: break;
             }
         }
-        // 利用随机函数生成食物
+        //// 利用随机函数生成食物
         void display()
         {
             int x, y;//表示食物点的坐标
@@ -141,7 +147,7 @@ namespace Snake
             lb.Location = new Point(x * 10, y * 10);
             this.Controls.Add(lb);
         }
-        //吃到食物，蛇的身体变长
+        ////吃到食物，蛇的身体变长
         void Snake_eat()
         {
             Label lb = new Label();
@@ -153,7 +159,7 @@ namespace Snake
             labels.Add(lb);
             snakelen++;
         }
-        //判断是否吃到食物以及吃到食物后的反应
+        ////判断是否吃到食物以及吃到食物后的反应
         void EatFood()
         {
             foreach (Label a1 in this.Controls)

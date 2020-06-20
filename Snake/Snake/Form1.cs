@@ -31,16 +31,19 @@ namespace Snake
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            //Form2 form2 = new Form2();
-            //form2.ShowDialog();
+            //this.DialogResult = DialogResult.OK;
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.ShowDialog();
+            //this.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Form3 form3 = new Form3();
-            //form3.ShowDialog();
-            this.DialogResult = DialogResult.No;
+            Form3 form3 = new Form3();
+            this.Hide();
+            form3.ShowDialog();
+            //this.Dispose();
         }
     }
 }
