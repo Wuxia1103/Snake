@@ -203,7 +203,7 @@ namespace Snake
                 timer1.Stop();
                 timer2.Stop();
                 MessageBox.Show("Game Over!");
-                myresult = MessageBox.Show("Game Over!","退出",MessageBoxButtons.OK);
+                myresult = MessageBox.Show("Game Over!","提示",MessageBoxButtons.OK);
                 if (myresult == DialogResult.OK)
                 {
                     this.Dispose();
