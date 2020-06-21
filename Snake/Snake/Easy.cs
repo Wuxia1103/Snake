@@ -33,7 +33,7 @@ namespace Snake
         {
             this.Top = 120;
             this.Left = 120;
-            this.Width = 1000;
+            this.Width = 800;
             this.Height = 500;
             this.BackColor = Color.White;
 
@@ -65,18 +65,32 @@ namespace Snake
         {
             Snake_move();
             EatFood();
+            CheckSnakeBodyInfrm();
         }
+        //撞自己判断
+        public void  CheckSnakeHeadInSnakeBody()
+        {
 
+            //if (labels[0] ==)
+            //{
+            //    timer1.Stop();
+            //    MessageBox.Show("Game over!");
+            //}
+        }
+        //撞墙判断
+        public void CheckSnakeBodyInfrm()
+        {
+            if (labels[0].Left <= 0 || labels[0].Left >= 770 || labels[0].Top <= 0 || labels[0].Top >= 450)
+            {
+                timer1.Stop();
+                MessageBox.Show("Game over!");
+            }
+        }
         //蛇移动
         void Snake_move()
         {
             switch (key)
             {
-                //case "1":
-                //    {
-                //        timer1.Interval = 1000;
-                //    }
-                //    break;
                 case "D":
                     for (int i = snakelen - 1; i > 0;)
                     {
@@ -154,7 +168,7 @@ namespace Snake
             lb.BackColor = Color.Black;
             lb.AutoSize = false;
             lb.Size = new Size(10, 10);
-            lb.Location = labels[snakelen - 2].Location;
+            lb.Location = labels[snakelen - 1].Location;
             this.Controls.Add(lb);
             labels.Add(lb);
             snakelen++;

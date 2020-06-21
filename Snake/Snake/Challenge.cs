@@ -51,6 +51,26 @@ namespace Snake
             }
             display();
         }
+        //撞自己判断
+        public void CheckSnakeHeadInSnakeBody()
+        {
+
+            //if (labels[0] ==)
+            //{
+            //    timer1.Stop();
+            //    MessageBox.Show("Game over!");
+            //}
+        }
+        //撞墙判断
+        public void CheckSnakeBodyInfrm()
+        {
+            if (labels[0].Left <= 0 || labels[0].Left >= 500 || labels[0].Top <= 0 || labels[0].Top >= 407)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                MessageBox.Show("Game over!");
+            }
+        }
         //倒计时
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -86,6 +106,7 @@ namespace Snake
         {
             Snake_move();
             eat_food();
+            CheckSnakeBodyInfrm();
         }
         /// <summary>
         /// 敲击键盘响应
@@ -177,6 +198,7 @@ namespace Snake
                 }
             }
         }
+
 
 
         //小蛇吃食物长身体
