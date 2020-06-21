@@ -215,5 +215,21 @@ namespace Snake
             labels.Add(lb);
             snakelen++; 
         }
+        //撞墙死亡
+        public void CheckSnakeBodyInfrm()
+        {
+            DialogResult myresult;
+            if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 420.5 || labels[0].Bottom >= 325)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                MessageBox.Show("Game Over!");
+                myresult = MessageBox.Show("Game Over!","提示",MessageBoxButtons.OK);
+                if (myresult == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }  
+        }
     }
 }
