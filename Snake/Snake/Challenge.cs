@@ -85,16 +85,16 @@ namespace Snake
                 timer1.Stop();
                 MessageBox.Show("Game over!");
                 //更新新纪录，还有问题
-                First = score;
-                la.Add(First);
-                int s = la[0];
-                label6.Text = s.ToString();
-                if (Last > First)
-                {
-                    Last = score;
-                    label6.Text = Last.ToString();
-                    First = Last;
-                }
+                //First = score;
+                //la.Add(First);
+                //int s = la[0];
+                //label6.Text = s.ToString();
+                //if (Last > First)
+                //{
+                //    Last = score;
+                //    label6.Text = Last.ToString();
+                //    First = Last;
+                //}
                 //else
                 //{
                 //    score = First;
