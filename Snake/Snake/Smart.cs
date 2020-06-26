@@ -171,7 +171,6 @@ namespace Snake
             if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 1271 || labels[0].Bottom >= 655)
             {
                 timer1.Stop();
-                //MessageBox.Show("Game Over!");
                 myresult = MessageBox.Show("Game Over!", "提示", MessageBoxButtons.OK);
                 if (myresult == DialogResult.OK)
                 {

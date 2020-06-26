@@ -77,15 +77,6 @@ namespace Snake
             //    MessageBox.Show("Game over!");
             //}
         }
-        //撞墙判断
-        public void CheckSnakeBodyInfrm()
-        {
-            if (labels[0].Left <= 0 || labels[0].Left >= 770 || labels[0].Top <= 0 || labels[0].Top >= 450)
-            {
-                timer1.Stop();
-                MessageBox.Show("Game over!");
-            }
-        }
         //蛇移动
         void Snake_move()
         {
