@@ -17,15 +17,16 @@ namespace Snake
             InitializeComponent();
         }
 
-        List<Label> labels = new List<Label>();//贪吃蛇身体数组
-        public Random food = new Random();//随机数,用于生成食物
-        int snakelen = 5;//蛇的初始长度
+        //List<Label> labels = new List<Label>();//贪吃蛇身体数组
+        Random food = new Random();//随机数,用于生成食物
+        //int snakelen = 5;//蛇的初始长度
+        Snake s = new Snake();
 
         // 利用随机函数生成食物
         public void display()
         {
             int x, y;//表示食物点的坐标
-            x = food.Next(55);
+            x = food.Next(500);
             y = food.Next(66);
             Label lb = new Label();
             lb.BackColor = Color.Red;
@@ -42,10 +43,10 @@ namespace Snake
             lb.BackColor = Color.Black;
             lb.AutoSize = false;
             lb.Size = new Size(10, 10);
-            lb.Location = labels[snakelen - 2].Location;
+            lb.Location = s.labels[s.snakelen - 2].Location;
             this.Controls.Add(lb);
-            labels.Add(lb);
-            snakelen++;
+            s.labels.Add(lb);
+            s.snakelen++;
         }
         //判断是否吃到食物以及吃到食物后的反应
         public void EatFood()
@@ -54,7 +55,7 @@ namespace Snake
             {
                 if (a1.BackColor == Color.Red)
                 {
-                    if (a1.Location == labels[0].Location)
+                    if (a1.Location == s.labels[0].Location)
                     {
                         this.Controls.Remove(a1);
                         display();
