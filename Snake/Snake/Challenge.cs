@@ -51,6 +51,26 @@ namespace Snake
             }
             display();
         }
+        //撞自己判断
+        public void CheckSnakeHeadInSnakeBody()
+        {
+
+            //if (labels[0] ==)
+            //{
+            //    timer1.Stop();
+            //    MessageBox.Show("Game over!");
+            //}
+        }
+        //撞墙判断
+        public void CheckSnakeBodyInfrm()
+        {
+            if (labels[0].Left <= 0 || labels[0].Left >= 420 || labels[0].Top <= 0 || labels[0].Top >= 315)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                MessageBox.Show("Game over!");
+            }
+        }
         //倒计时
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -65,16 +85,16 @@ namespace Snake
                 timer1.Stop();
                 MessageBox.Show("Game over!");
                 //更新新纪录，还有问题
-                First = score;
-                la.Add(First);
-                int s = la[0];
-                label6.Text = s.ToString();
-                if (Last > First)
-                {
-                    Last = score;
-                    label6.Text = Last.ToString();
-                    First = Last;
-                }
+                //First = score;
+                //la.Add(First);
+                //int s = la[0];
+                //label6.Text = s.ToString();
+                //if (Last > First)
+                //{
+                //    Last = score;
+                //    label6.Text = Last.ToString();
+                //    First = Last;
+                //}
                 //else
                 //{
                 //    score = First;
@@ -180,6 +200,7 @@ namespace Snake
         }
 
 
+
         //小蛇吃食物长身体
         void Snake_eat()
         {
@@ -193,22 +214,6 @@ namespace Snake
             label4.Text = score.ToString();
             labels.Add(lb);
             snakelen++; 
-        }
-        //撞墙死亡
-        public void CheckSnakeBodyInfrm()
-        {
-            DialogResult myresult;
-            if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 420.5 || labels[0].Bottom >= 325)
-            {
-                timer1.Stop();
-                timer2.Stop();
-                MessageBox.Show("Game Over!");
-                myresult = MessageBox.Show("Game Over!","提示",MessageBoxButtons.OK);
-                if (myresult == DialogResult.OK)
-                {
-                    this.Dispose();
-                }
-            }  
         }
     }
 }
