@@ -58,7 +58,6 @@
     <Compile Include="BejinSmart.Designer.cs">
       <DependentUpon>BejinSmart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Food.cs" />
     <Compile Include="BejinEasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +69,12 @@
     </Compile>
     <Compile Include="Easy.Designer.cs">
       <DependentUpon>Easy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Food.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Food.Designer.cs">
+      <DependentUpon>Food.cs</DependentUpon>
     </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
@@ -91,7 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Snake.cs" />
+    <Compile Include="Snake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Snake.Designer.cs">
+      <DependentUpon>Snake.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BeginChallenge.resx">
       <DependentUpon>BeginChallenge.cs</DependentUpon>
     </EmbeddedResource>
