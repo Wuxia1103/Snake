@@ -12,40 +12,30 @@ namespace Snake
 {
     public partial class Snake : Form
     {
+        
         public Snake()
         {
             InitializeComponent();
         }
-        string key = "D";//记录键盘状态
+
+        public string key = "D";//记录键盘状态
         List<Label> labels = new List<Label>();//贪吃蛇身体数组
         int snakelen = 5;//蛇的初始长度
-        Food f = new Food();
-        Easy easy = new Easy();
+        //Easy easy = new Easy();
+        //Food f = new Food();
 
-        public void SetSnake()
-        {
-            //贪吃蛇设置
-            int x = 10, y = 10;
-            for (int i = 0; i < snakelen;)
-            {
-                Label label = new Label();
-                label.BackColor = Color.Black;
-                label.ForeColor = Color.Red;
-                label.AutoSize = false;
-                label.Size = new Size(10, 10);
-                label.Location = new Point(x * 10, y * 10);
-                x--;
-                this.Controls.Add(label);
-                labels.Add(label);
-                i++;
-            }
-        }
+            
 
         //蛇移动
         public void Snake_move()
         {
             switch (key)
             {
+                //case "1":
+                //    {
+                //        timer1.Interval = 1000;
+                //    }
+                //    break;
                 case "D":
                     for (int i = snakelen - 1; i > 0;)
                     {
@@ -83,8 +73,9 @@ namespace Snake
                     }
                     break;
             }
+            
         }
-       // 敲击键盘响应
+        //敲击键盘响应
         public void Form1_keyDown(object sender, KeyEventArgs e)
         {
             string a = Convert.ToString(e.KeyCode);
@@ -98,20 +89,10 @@ namespace Snake
                 default: break;
             }
         }
-        //撞墙死亡
-            public void CheckSnakeBodyInfrm()
+       
+        private void Snake_Load(object sender, EventArgs e)
         {
-            DialogResult myresult;
-            if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 1271 || labels[0].Bottom >= 655)
-            {
-                easy.timer1.Stop();
-                MessageBox.Show("Game Over!");
-                myresult = MessageBox.Show("Game Over!", "提示", MessageBoxButtons.OK);
-                if (myresult == DialogResult.OK)
-                {
-                    this.Dispose();
-                }
-            }
+
         }
 
     }
