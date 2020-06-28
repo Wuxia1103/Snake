@@ -25,8 +25,8 @@ namespace Snake
         public void display()
         {
             int x, y;//表示食物点的坐标
-            x = food.Next(55);
-            y = food.Next(66);
+            x = food.Next(20);
+            y = food.Next(30);
             Label lb = new Label();
             lb.BackColor = Color.Red;
             lb.AutoSize = false;
@@ -63,5 +63,6 @@ namespace Snake
                 }
             }
         }
+        
     }
 }
