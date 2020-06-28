@@ -14,12 +14,12 @@ namespace Snake
     public partial class Easy : Form
     {
         //string key = "D";//记录键盘状态
-        //public List<Label> labels = new List<Label>();//贪吃蛇身体数组
+        List<Label> labels = new List<Label>();//贪吃蛇身体数组
         //Random food = new Random();//随机数,用于生成食物
-        //int snakelen = 5;//蛇的初始长度
+        int snakelen = 5;//蛇的初始长度
         Food f = new Food();
         Snake s = new Snake();
-
+        
 
         public Easy()
         {
@@ -35,36 +35,36 @@ namespace Snake
             this.BackColor = Color.White;
 
             //贪吃蛇设置
-            //int x = 10, y = 10;
-            //for (int i = 0; i < snakelen;)
-            //{
-            //    Label label = new Label();
-            //    label.BackColor = Color.Black;
-            //    label.ForeColor = Color.Red;
-            //    label.AutoSize = false;
-            //    label.Size = new Size(10, 10);
-            //    label.Location = new Point(x * 10, y * 10);
-            //    x--;
-            //    this.Controls.Add(label);
-            //    labels.Add(label);
-            //    i++;
-            //}
-            s.SetSnake();
+            int x = 10, y = 10;
+            for (int i = 0; i < snakelen;)
+            {
+                Label label = new Label();
+                label.BackColor = Color.Black;
+                label.ForeColor = Color.Red;
+                label.AutoSize = false;
+                label.Size = new Size(10, 10);
+                label.Location = new Point(x * 10, y * 10);
+                x--;
+                this.Controls.Add(label);
+                labels.Add(label);
+                i++;
+            }
+
 
             //控件timer,每隔一段时间发生一次右移
             timer1.Tick += new EventHandler(timer1_Tick);
             f.display();
             timer1.Start();
             //键盘敲击事件
-            this.KeyDown += new KeyEventHandler(s.Form1_keyDown);           
+            this.KeyDown += new KeyEventHandler(s.Form1_keyDown);
         }
 
         //时间，定时器
-        private void timer1_Tick(object sender, EventArgs e)
+        public void timer1_Tick(object sender, EventArgs e)
         {
             s.Snake_move();
-            f.EatFood();
-            s.CheckSnakeBodyInfrm();
+            EatFood();
+            CheckSnakeBodyInfrm();
         }
 
         //蛇移动
@@ -148,47 +148,47 @@ namespace Snake
         //    this.Controls.Add(lb);
         //}
         //吃到食物，蛇的身体变长
-        //void Snake_eat()
-        //{
-        //    Label lb = new Label();
-        //    lb.BackColor = Color.Black;
-        //    lb.AutoSize = false;
-        //    lb.Size = new Size(10, 10);
-        //    lb.Location = labels[snakelen - 2].Location;
-        //    this.Controls.Add(lb);
-        //    labels.Add(lb);
-        //    snakelen++;
-        //}
+        void Snake_eat()
+        {
+            Label lb = new Label();
+            lb.BackColor = Color.Black;
+            lb.AutoSize = false;
+            lb.Size = new Size(10, 10);
+            lb.Location = labels[snakelen - 2].Location;
+            this.Controls.Add(lb);
+            labels.Add(lb);
+            snakelen++;
+        }
         //判断是否吃到食物以及吃到食物后的反应
-        //void EatFood()
-        //{
-        //    foreach (Label a1 in this.Controls)
-        //    {
-        //        if (a1.BackColor == Color.Red)
-        //        {
-        //            if (a1.Location == labels[0].Location)
-        //            {
-        //                this.Controls.Remove(a1);
-        //                f.display();
-        //                f.Snake_eat();
-        //            }
-        //        }
-        //    }
-        //}
+        void EatFood()
+        {
+            foreach (Label a1 in this.Controls)
+            {
+                if (a1.BackColor == Color.Red)
+                {
+                    if (a1.Location == labels[0].Location)
+                    {
+                        this.Controls.Remove(a1);
+                        f.display();
+                        Snake_eat();
+                    }
+                }
+            }
+        }
         //撞墙死亡
-        //public void CheckSnakeBodyInfrm()
-        //{
-        //    DialogResult myresult;
-        //    if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 1271 || labels[0].Bottom >= 655)
-        //    {
-        //        timer1.Stop();
-        //        MessageBox.Show("Game Over!");
-        //        myresult = MessageBox.Show("Game Over!", "提示", MessageBoxButtons.OK);
-        //        if (myresult == DialogResult.OK)
-        //        {
-        //            this.Dispose();
-        //        }
-        //    }
-        //}
+        public void CheckSnakeBodyInfrm()
+        {
+            DialogResult myresult;
+            if (labels[0].Left <= 9 || labels[0].Top <= 9 || labels[0].Right >= 1271 || labels[0].Bottom >= 655)
+            {
+                timer1.Stop();
+                MessageBox.Show("Game Over!");
+                myresult = MessageBox.Show("Game Over!", "提示", MessageBoxButtons.OK);
+                if (myresult == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+        }
     }
 }
