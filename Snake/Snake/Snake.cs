@@ -15,34 +15,24 @@ namespace Snake
         
         public Snake()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
-
         public string key = "D";//记录键盘状态
-        List<Label> labels = new List<Label>();//贪吃蛇身体数组
-        int snakelen = 5;//蛇的初始长度
-        //Easy easy = new Easy();
-        //Food f = new Food();
-
-            
-
+        public int snakelen = 5;//蛇的初始长度
+        public Label[] labels = new Label[100];
+        
         //蛇移动
         public void Snake_move()
         {
             switch (key)
             {
-                //case "1":
-                //    {
-                //        timer1.Interval = 1000;
-                //    }
-                //    break;
                 case "D":
-                    for (int i = snakelen - 1; i > 0;)
+                    for (int i =snakelen-1; i > 0; i--)
                     {
                         labels[i].Left = labels[i - 1].Left;
                         labels[i].Top = labels[i - 1].Top;
                         labels[i - 1].Left += 10;
-                        i--;
+                        
                     }
                     break;
                 case "A":
@@ -85,15 +75,24 @@ namespace Snake
                 case "A": key = "A"; break;//左
                 case "S": key = "S"; break;//下
                 case "D": key = "D"; break;//右
-                //case "1": key = "1"; break;
                 default: break;
             }
         }
-       
+        public Label length()
+        {
+            Label length = new Label();
+            length.Width = 10;
+            length.Height = 10;
+            length.BackColor = Color.Black;
+            length.Top = labels[snakelen - 2].Top;
+            length.Left = labels[snakelen - 2].Left;
+            labels[snakelen - 1] = length;
+            return length;
+        }
+
         private void Snake_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
