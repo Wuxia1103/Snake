@@ -36,12 +36,12 @@ namespace Snake
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = DBHelper.conn;
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "select User,Password from snake where User='" + textBox_Username.Text + "' and Password='" + textBox_Password.Text + "'";
+            sqlCommand.CommandText = "select userInfo,password from Logins where userInfo='" + textBox_Username.Text + "' and password='" + textBox_Password.Text + "'";
 
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                if (sqlDataReader["User"].ToString() != null && sqlDataReader["Password"].ToString() != null)
+                if (sqlDataReader["userInfo"].ToString() != null && sqlDataReader["password"].ToString() != null)
                 {
 
 

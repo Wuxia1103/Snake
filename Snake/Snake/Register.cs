@@ -21,7 +21,7 @@ namespace Snake
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sqlstr = "insert into snake(User,Password) values('" + textBox1.Text + "','" + textBox2.Text + "')";
+            string sqlstr = "insert into Logins(userInfo,password) values('" + textBox1.Text + "','" + textBox2.Text + "')";
 
             DBHelper.update(sqlstr);
             this.Hide();
