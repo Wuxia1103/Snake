@@ -29,5 +29,10 @@ namespace Snake
             login.ShowDialog();
             this.Dispose();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

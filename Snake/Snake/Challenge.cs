@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Snake.Components;
 
 namespace Snake
 {
@@ -17,8 +19,6 @@ namespace Snake
         //得分
         int score = 0;
         int second;//存放时间
-        //int First = 0, Last = 0;
-        //List<int> la = new List<int>();//保存数据
         public Challenge()
         {
             InitializeComponent();
@@ -44,21 +44,34 @@ namespace Snake
                 timer2.Stop();
                 timer1.Stop();
                 MessageBox.Show("Game over!");
-                ////更新新纪录，还有问题
-                //First = score;
-                //la.Add(First);
-                //int s = la[0];
-                //label6.Text = s.ToString();
-                //if (Last > First)
+                this.label6.Text = score.ToString();
+                //更新新纪录，还有问题
+                //this.label6.Text = score.ToString();
+                //DBHelper.open();
+                //SqlCommand sqlCommand = new SqlCommand();
+                //sqlCommand.Connection = DBHelper.conn;
+                //sqlCommand.CommandType = CommandType.Text;
+                ////sqlCommand.CommandText = "select 最高得分 from Logins where 最高得分='" + label6.Text ;
+                //SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                //DataSet myDataSet = new DataSet();
+                //string myString = myDataSet.Tables["Logins"].Rows[3]["最高得分"].ToString();
+                //while (sqlDataReader.Read())
                 //{
-                //    Last = score;
-                //    label6.Text = Last.ToString();
-                //    First = Last;
+                //    if (sqlDataReader["最高得分"].ToString() != null)
+                //    {
+                //        //数据库中得分数不为0
+
+
+                //    }
+                //    else
+                //    {
+                //        //数据库中的得分数为0,第一次
+                //        myString = label6.Text;
+                //    }
+
                 //}
-                //else
-                //{
-                //    score = First;
-                //}
+                //sqlDataReader.Close();
+                //DBHelper.close();
             }
         }
         //定时器
@@ -81,6 +94,8 @@ namespace Snake
                         Label label2 = f.display();
                         pictureBox1.Controls.Add(label2);
                         Snake_eat();
+                        score = score + 1;
+                        label4.Text = score.ToString();
                     }
                 }
             }
@@ -96,6 +111,7 @@ namespace Snake
             s.snakelen++;
             Label length = s.length();
             pictureBox1.Controls.Add(s.length());
+            
         }
         //撞墙判断
         public void CheckSnakeBodyInfrm()
@@ -105,6 +121,34 @@ namespace Snake
                 timer1.Stop();
                 timer2.Stop();
                 MessageBox.Show("Game over!");
+                this.label6.Text = score.ToString();
+                ////更新新纪录，还有问题
+                //this.label6.Text = score.ToString();
+                //DBHelper.open();
+                //SqlCommand sqlCommand = new SqlCommand();
+                //sqlCommand.Connection = DBHelper.conn;
+                //sqlCommand.CommandType = CommandType.Text;
+                //sqlCommand.CommandText = "select 最高得分 from Logins where 最高得分='" + label6.Text ;
+                //SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                //DataSet myDataSet = new DataSet();
+                //string myString = myDataSet.Tables["Logins"].Rows[3]["最高得分"].ToString();
+                //while (sqlDataReader.Read())
+                //{
+                //    if (sqlDataReader["最高得分"].ToString() != null)
+                //    {
+                //        //数据库中得分数不为0
+
+
+                //    }
+                //    else
+                //    {
+                //        //数据库中的得分数为0,第一次
+                //        myString = label6.Text;
+                //    }
+
+                //}
+                //sqlDataReader.Close();
+                //DBHelper.close();
             }
         }
 

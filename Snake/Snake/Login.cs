@@ -75,5 +75,10 @@ namespace Snake
             register.ShowDialog();
             this.Dispose();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
