@@ -46,7 +46,6 @@ namespace Snake
                 MessageBox.Show("Game over!");
                 this.label6.Text = score.ToString();
                 //更新新纪录，还有问题
-                //this.label6.Text = score.ToString();
                 //DBHelper.open();
                 //SqlCommand sqlCommand = new SqlCommand();
                 //sqlCommand.Connection = DBHelper.conn;
@@ -60,8 +59,6 @@ namespace Snake
                 //    if (sqlDataReader["最高得分"].ToString() != null)
                 //    {
                 //        //数据库中得分数不为0
-
-
                 //    }
                 //    else
                 //    {
@@ -116,11 +113,16 @@ namespace Snake
         //撞墙判断
         public void CheckSnakeBodyInfrm()
         {
+            DialogResult myresult;
             if (s.labels[0].Left <= 0 || s.labels[0].Left >= 420 || s.labels[0].Top <= 0 || s.labels[0].Top >= 315)
             {
                 timer1.Stop();
                 timer2.Stop();
-                MessageBox.Show("Game over!");
+                myresult=MessageBox.Show("Game over!","提示",MessageBoxButtons.OK);
+                if (myresult == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
                 this.label6.Text = score.ToString();
                 ////更新新纪录，还有问题
                 //this.label6.Text = score.ToString();

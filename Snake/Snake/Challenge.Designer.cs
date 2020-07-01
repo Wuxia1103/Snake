@@ -43,7 +43,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 70;
+            this.timer1.Interval = 60;
             // 
             // pictureBox1
             // 
